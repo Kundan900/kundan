@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<head>
+  <script>
+    alert('You are accessing an unstable version of kuproxy, if you wish to continue, press ok.')
+  </script>
+	<title>Unblocker</title>
+	<link rel="icon" type="image/png" href="https://proxy.theonlygoodone.repl.co/proxy/https:/icon-library.com/images/blocked-icon/blocked-icon-27.jpg"
+	/>
+	<style>
+    body {
+			background-color: #000015;
+		}
+
+		#mainDiv {
+    position: absolute;
+    width: 400px;
+    height: 150px;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    margin: -75px 0 0 -200px;
+    z-index: 1;
+    -moz-user-select: -moz-none;
+			-khtml-user-select: none;
+			-webkit-user-select: none;
+    }
+
+		.title {
+			color: #ebebf2;
+			font-size: 50px;
+			margin: auto;
+			-moz-user-select: -moz-none;
+			-khtml-user-select: none;
+			-webkit-user-select: none;
+		}
+
+		#website-input {
+			background-color: #101025;
+			color: #dedee9;
+			font-size: 20px;
+			padding: 8px;
+			border: 2px solid transparent;
+			border-radius: 7px;
+			transition-duration: 500ms;
+      -moz-user-select: -moz-none;
+			-khtml-user-select: none;
+			-webkit-user-select: none;
+		}
+
+		#website-input:focus {
+			border: 2px solid #26264a;
+			transition-duration: 500ms;
+		}
+
+		#website-submit {
+			background-color: #101025;
+			color: #dedee9;
+			font-size: 20px;
+			padding: 10px;
+			text-align: center;
+			border-style: none;
+			border-radius: 7px;
+			transition-duration: 500ms;
+      -moz-user-select: -moz-none;
+			-khtml-user-select: none;
+			-webkit-user-select: none;
+		}
+
+		#website-submit:hover {
+			background-color: #26264a;
+			cursor: pointer;
+			transition-duration: 500ms;
+		}
+
+		input:focus,
+		select:focus,
+		textarea:focus,
+		button:focus {
+			outline: none;
+		}
+
+    #particles-js {
+      animation: appear 2s 1
+    }
+
+    @keyframes appear {
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      from {
+        transform: scale(0);
+        opacity: 0;
+      }
+    }
+	</style>
+</head>
+
+<body>
+  <div id="mainDiv">
+		<p class="title"><em>Mi</em>niproxy Beta</p>
+        <input id="website-input" type="url" placeholder="Blocked Website URL" autocomplete="off"> <button id="website-submit">Go</button>
+        <p id="hits" class="title" style="font-size: 20px;"></p>
+        </div>
+        <div id="particles-js" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0;"></div>
+      <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+      <script>
+        particlesJS.load('particles-js', './particles.json', function() {
+  console.log('callback - particles.js config loaded');
+});
+
+setInterval(() => {
+  if(window.pJSDom[0].pJS.particles.array.length > window.pJSDom[0].pJS.particles.number.value) {
+    window.pJSDom[0].pJS.fn.modes.removeParticles(1);
+  }
+}, 500);
+        
+        document.getElementById('website-submit').onclick = function() {
+        let newURL = document.getElementById('website-input').value
+        window.location.href = 'https://miniproxy.yadavpinkee48.repl.co/proxy/' + newURL
+      };
+
+      let dotsGoingUp = true;
+    var dots = window.setInterval( function() {
+        var wait = document.getElementById("hits");
+        if ( dotsGoingUp ) 
+            wait.innerHTML += ".";
+        else {
+            wait.innerHTML = wait.innerHTML.substring(1, wait.innerHTML.length);
+            if ( wait.innerHTML === "")
+               dotsGoingUp = true;
+        }
+        if ( wait.innerHTML.length > 9 )
+            dotsGoingUp = false;
+}, 100);
+      
+      fetch('https://cors-anywhere.herokuapp.com/https://repl-stats--amasad.repl.co/hits_by_day/proxy.theonlygoodone.repl.co')
+    .then(response => response.json())
+    .then(raw => {
+      window.clearInterval(dots);
+      let total = 0;
+      raw.forEach(day => total += day.hits);
+      document.getElementById('hits').innerHTML = 'MrDev Proxy || Websites Proxied: ' + total.toLocaleString()
+    });
+
+      </script>
+    </body>
+  </html>
