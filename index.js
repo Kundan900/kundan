@@ -61,6 +61,6 @@ server.listen(8080, () => {
 });
 
 // setInterval(() => {
-// https.get('https://miniproxy.yadavpinkee48.repl.co/', (res) => {})
+// https.get('kundan900.github.io/', (res) => {})
 // console.log('ping');
 // }, 10000);
