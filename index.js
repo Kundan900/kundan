@@ -57,7 +57,7 @@ const server = http.createServer(function(req, res) {
 })
 
 server.listen(8080, () => {
-  console.log('Server started: https://miniproxy.yadavpinkee48.repl.co')
+  console.log('Server started: https://kundan900.github.io')
 });
 
 // setInterval(() => {
